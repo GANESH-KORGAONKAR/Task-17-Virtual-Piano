@@ -13,20 +13,43 @@ body {
 main {
     height: 100%;
     width: 100%;
-    background: #303030;
+    background: #444444;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
     gap: 3rem;
 }
 
+main h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.wrapper {
+    width: 70%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: black;
+    border-radius: 1.5rem;
+}
+
+.wrapper h3 {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
 .container {
-    width: 90%;
-    width: 80%;
+    /* width: 100%; */
     display: flex;
     align-items: flex-start;
-    justify-content:center;
+    justify-content: center;
 }
 
 .Key {
@@ -43,18 +66,19 @@ main {
     transition: background 0.2s, transform 0.1s;
 }
 
-.Key:active {
+.white {
+    width: 6rem;
+    height: 300px;
+    background: white;
+    z-index: 0;
+}
+
+.white:active {
     background: #e0e0e0;
     /* transform: translateY(1px); */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.white {
-      width: 6rem;
-    height: 300px;
-   background: white;
-    z-index: 0;
-
+    font-weight: 600;
+    border: 3px solid black;
 }
 
 .black {
@@ -65,4 +89,11 @@ main {
     margin-left: -2rem;
     margin-right: -2rem;
     z-index: 1;
+}
+
+.black:active {
+    background: #313131;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    border: 1px solid black;
 }
