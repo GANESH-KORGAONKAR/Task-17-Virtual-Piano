@@ -1,4 +1,5 @@
 const keys = document.querySelectorAll(".Key");
+let isMouseDown = false;
 
 // Preload all sounds
 const sounds = {};
@@ -30,14 +31,43 @@ function activateKey(key) {
   }, 100);
 }
 
-// Mouse click
+document.addEventListener("mousedown", () => {
+  isMouseDown = true;
+});
+
+document.addEventListener("mouseup", () => {
+  isMouseDown = false;
+});
+
 keys.forEach(key => {
-  key.addEventListener("click", () => {
+
+  // Normal click (single press)
+  key.addEventListener("mousedown", () => {
     const number = key.dataset.key;
     playSound(number);
     activateKey(key);
   });
+
+  // Drag effect
+  key.addEventListener("mouseenter", () => {
+    if (isMouseDown) {
+      const number = key.dataset.key;
+      playSound(number);
+      activateKey(key);
+    }
+  });
+
 });
+
+
+// Mouse click
+// keys.forEach(key => {
+//   key.addEventListener("click", () => {
+//     const number = key.dataset.key;
+//     playSound(number);
+//     activateKey(key);
+//   });
+// });
 
 // Keyboard press
 document.addEventListener("keydown", (e) => {
