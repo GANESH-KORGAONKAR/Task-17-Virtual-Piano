@@ -59,7 +59,6 @@ keys.forEach(key => {
 
 });
 
-
 // Mouse click
 // keys.forEach(key => {
 //   key.addEventListener("click", () => {
